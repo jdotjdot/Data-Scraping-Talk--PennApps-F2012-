@@ -1,6 +1,11 @@
 # Grabbing a simple page using requests
 
+# with requests, "params" are for GET--the querystring args
+#				 "data" is for POST--the form information
+
 import requests
+import re
+from bs4 import BeautifulSoup
 
 def simple_get():
 	r = requests.get('http://www.upenn.edu/registrar/register/')
@@ -20,7 +25,7 @@ def get_with_get_params():
 def post_request():
 	# this is just an example and doesn't do anything
 	r = requests.post('http://www.mysite.com/updateinfo',
-			params={'username': 'jj', 'password': 'PlaintextPasswordsAreBad',
+			data={'username': 'jj', 'password': 'PlaintextPasswordsAreBad',
 					'address': '3901 Locust Walk'})
 	return r
 
@@ -41,6 +46,26 @@ def login_and_stay_logged_in():
 	# basically allows you to log into a website and stay logged in in order to
 	# pull your information.
 
-	s = request.session()
+	# https://secure.westelm.com/account/login.html
 
-	# finish
+	username = 'pennapps@suremail.info'
+	password = 'pennapps1'
+
+	s = requests.session(headers={'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.10 (KHTML, like Gecko) Chrome/23.0.1263.1 Safari/537.10'})
+
+	r = s.get('https://secure.westelm.com/account/login.html')
+
+	r = s.post('https://secure.westelm.com/authenticate.html',
+				data={'email': username,
+						'password': password,
+						'x': 0, 'y': 0},
+						# How do I know about 'x' and 'y'?
+						# From viewing the headers in the POST
+						# request using Chrome's developer tools
+						# That being said, might not be necessary
+				headers={'referer': 'https://secure.westelm.com/account/login.html',
+						 'origin': 'https://secure.westelm.com',
+						 })
+
+
+	return s
