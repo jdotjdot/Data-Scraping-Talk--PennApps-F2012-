@@ -76,7 +76,7 @@ def store_as_mongodb(information):
 
 	# Store specific information
 	class MyDataItem(mongoengine.Document):
-		email = mongoengine.StringField(required=True)
+		email = mongoengine.EmailField(required=True)
 		first_name = mongoengine.StringField(max_length=50)
     	last_name = mongoengine.StringField(max_length=50)
     	phones = mongoengine.ListField(mongoengine.StringField(), default=[])
