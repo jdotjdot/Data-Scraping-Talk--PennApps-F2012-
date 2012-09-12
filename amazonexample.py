@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from mongoengine import *
 
 connect('amazon')
+# connect('amazon', host='mongodb://pennapps:pennapps1@ds037617-a.mongolab.com:37617/data_scraping')
 
 class amazon_item(Document):
 	meta = {'collection': 'amazon'}
