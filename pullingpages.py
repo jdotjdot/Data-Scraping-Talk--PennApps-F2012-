@@ -3,6 +3,8 @@
 # with requests, "params" are for GET--the querystring args
 #				 "data" is for POST--the form information
 
+# This code can be considered part of the public domain, for any use by anyone.
+
 import requests
 import re
 from bs4 import BeautifulSoup

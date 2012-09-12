@@ -5,7 +5,8 @@
     # ignoring HTML comments and grabbing a list of images
     # as a list.  This is then all saved to a Django model.
 
-# See at http://freezing-galaxy-4962.herokuapp.com
+# Copyright J.J. Fliegelman 2012, All Rights Reserved
+# May not be shared or reproduced in any fashion without express written consent of copyright holder
 
 
 import requests, sys, datetime, re, pprint
