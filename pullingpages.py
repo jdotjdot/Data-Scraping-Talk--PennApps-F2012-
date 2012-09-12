@@ -19,8 +19,9 @@ def get_with_get_params():
 
 def post_request():
 	# this is just an example and doesn't do anything
-	r = requests.post('http://www.mysite.com/login',
-			params={'username': 'jj', 'password': 'PlaintextPasswordsAreBad'})
+	r = requests.post('http://www.mysite.com/updateinfo',
+			params={'username': 'jj', 'password': 'PlaintextPasswordsAreBad',
+					'address': '3901 Locust Walk'})
 	return r
 
 def pretend_we_are_chrome():
@@ -33,3 +34,13 @@ def pretend_we_are_chrome():
 
 	#if we want to get the text instead:
 	return r.text
+
+def login_and_stay_logged_in():
+	# Using this piece of the requests module allows you to maintain cookies
+	# and sessions (including authentication) across multiple requests, which
+	# basically allows you to log into a website and stay logged in in order to
+	# pull your information.
+
+	s = request.session()
+
+	# finish

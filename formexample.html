@@ -1,0 +1,115 @@
+<!-- This form sample is taken from http://www.quora.com/ -->
+
+<!-- all comments are mine, to show you the important pieces -->
+
+
+<div class="w2_5 e_col col logged_out_home_login" id="__w2_P6ifurb_login">
+    <div>
+        <h2>
+            Returning Users
+        </h2>
+    </div>
+    <div class="row">
+        <div id="ld_NpG8Gi_34832">
+            <div id="__w2_EZTz0iq_associated">
+                <div id="ld_M0RFAY_35368">
+                </div>
+            </div>
+            <div class="w3_5 p1">
+
+
+
+           	<!-- this is the beginning of the form element, whch is what's going to give us clues about
+           		how we make our request and copy what the browser is doing for us.
+
+				method:  This tells us whether it's making a GET or POST request, important for how
+						 we make ours.
+			    action:  Though not present in this form, the 'action' field is the URL to which the request
+			    	     is made.  If it just said action="/login", the request would be to
+			    	     "http://www.quore.com/login/page".  
+
+			    	     Action fields follow usual UNIX rules of directory traversal.
+
+			    	     From http://www.quora.com/loginpage, action items would take you to:
+			    	     "/help": http://www.quora.com/help
+			    	     "./../logmein": http://www.quora.com/login/logmein
+			    	     "logout": http://www.quora.com/login/page/logout
+
+			 -->
+
+
+                <form class="row w2_5 col inline_login_form" method="POST" id="__w2_EZTz0iq_login_form">
+                    <div class="form_inputs">
+                        <div class="form_row">
+                            <label for="__w2_EZTz0iq_email">
+                                Email Address
+                            </label>
+                            
+
+             <!-- The field immediately below, with the 'input' tag, is one of the important fields: the username-->
+
+                            <input class="text ignore_interaction" group="__w2_EZTz0iq_interaction"
+                            type="text" name="email" w2cid="EZTz0iq" id="__w2_EZTz0iq_email">
+                            <p class="hidden input_validation_error_text" id="__w2_EZTz0iq_email_not_confirmed_error"
+                            style="display: none;">
+                                You need to confirm your email address before you can login.
+                                <br>
+                                <a href="#" id="__w2_EZTz0iq_resend_confirmation">Resend Confirmation Link</a>
+                            </p>
+                            <span class="hidden input_validation_error_text" id="__w2_EZTz0iq_email_not_found_error"
+                            style="display: none;">
+                                <div>
+                                    No account found for this email address.
+                                </div>
+                                <div>
+                                    To create an account,
+                                    <a href="/signup" id="__w2_EZTz0iq_email_not_found_signup_link">sign up for Quora.</a>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="form_row">
+                            <label for="__w2_EZTz0iq_password">
+                                Password
+                            </label>
+
+
+             <!-- The field immediately below, with the 'input' tag, is one of the important fields: the password -->
+
+
+                            <input class="text ignore_interaction" group="__w2_EZTz0iq_interaction"
+                            type="password" name="password" w2cid="EZTz0iq" id="__w2_EZTz0iq_password">
+                            <span class="hidden input_validation_error_text" id="__w2_EZTz0iq_incorrect_password_error"
+                            style="display: none;">
+                                Incorrect password.
+                                <a href="#" id="__w2_EZTz0iq_reset_password_link">Reset Password</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form_buttons p1">
+                        <input class="col p0_5 ignore_interaction" group="__w2_EZTz0iq_interaction"
+                        type="checkbox" checked="checked" name="allow_passwordless" value="allow_passwordless"
+                        w2cid="EZTz0iq" id="__w2_EZTz0iq_allow_passwordless">
+                        <label class="login_option" for="__w2_EZTz0iq_allow_passwordless">
+                            Let me login without a password on this browser
+                        </label>
+
+
+              <!-- the input field immediately below here is the submit button.  We need to pay attention here
+              	only to see if any Javascript is launched using an "onclick" field. -->
+
+                        <input class="submit_button ignore_interaction submit_button_disabled"
+                        group="__w2_EZTz0iq_interaction" type="submit" value="Login" w2cid="EZTz0iq"
+                        id="__w2_EZTz0iq_submit_button">
+                    </div>
+                </form>
+                <div class="hidden e_col inline_login_preview_box" id="__w2_EZTz0iq_preview"
+                style="display: none;">
+                    <img width="50" height="50" id="__w2_EZTz0iq_pic">
+                    <br>
+                    <span id="__w2_EZTz0iq_name">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
